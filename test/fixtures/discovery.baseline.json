@@ -1,0 +1,503 @@
+{
+  "devices": {
+    "electricity": {
+      "external_id": "ext:test-integration:meter:e1ec0000-1111-4222-8333-444455556666",
+      "should_poll": false,
+      "params": ["GLOW_COMMODITY", "GLOW_HOME"],
+      "features": [
+        {
+          "external_id": "ext:test-integration:meter:e1ec0000-1111-4222-8333-444455556666:consumption",
+          "category": "energy-sensor",
+          "type": "thirty-minutes-consumption",
+          "unit": "kilowatt-hour",
+          "min": 0,
+          "max": 1000,
+          "read_only": true,
+          "has_feedback": false,
+          "supported_options": []
+        },
+        {
+          "external_id": "ext:test-integration:meter:e1ec0000-1111-4222-8333-444455556666:energy_today",
+          "category": "energy-sensor",
+          "type": "index-today",
+          "unit": "kilowatt-hour",
+          "min": 0,
+          "max": 100000,
+          "read_only": true,
+          "has_feedback": false,
+          "supported_options": []
+        },
+        {
+          "external_id": "ext:test-integration:meter:e1ec0000-1111-4222-8333-444455556666:energy_yesterday",
+          "category": "energy-sensor",
+          "type": "index-yesterday",
+          "unit": "kilowatt-hour",
+          "min": 0,
+          "max": 100000,
+          "read_only": true,
+          "has_feedback": false,
+          "supported_options": []
+        },
+        {
+          "external_id": "ext:test-integration:meter:e1ec0000-1111-4222-8333-444455556666:cost_today",
+          "category": "currency",
+          "type": "decimal",
+          "unit": "pound-sterling",
+          "min": 0,
+          "max": 100000,
+          "read_only": true,
+          "has_feedback": false,
+          "supported_options": []
+        },
+        {
+          "external_id": "ext:test-integration:meter:e1ec0000-1111-4222-8333-444455556666:cost_yesterday",
+          "category": "currency",
+          "type": "decimal",
+          "unit": "pound-sterling",
+          "min": 0,
+          "max": 100000,
+          "read_only": true,
+          "has_feedback": false,
+          "supported_options": []
+        },
+        {
+          "external_id": "ext:test-integration:meter:e1ec0000-1111-4222-8333-444455556666:unit_rate",
+          "category": "currency",
+          "type": "decimal",
+          "unit": "pound-sterling",
+          "min": 0,
+          "max": 100,
+          "read_only": true,
+          "has_feedback": false,
+          "supported_options": []
+        },
+        {
+          "external_id": "ext:test-integration:meter:e1ec0000-1111-4222-8333-444455556666:standing_charge",
+          "category": "currency",
+          "type": "decimal",
+          "unit": "pound-sterling",
+          "min": 0,
+          "max": 100,
+          "read_only": true,
+          "has_feedback": false,
+          "supported_options": []
+        },
+        {
+          "external_id": "ext:test-integration:meter:e1ec0000-1111-4222-8333-444455556666:power",
+          "category": "energy-sensor",
+          "type": "power",
+          "unit": "watt",
+          "min": 0,
+          "max": 100000,
+          "read_only": true,
+          "has_feedback": false,
+          "supported_options": []
+        }
+      ]
+    },
+    "electricity_bare": {
+      "external_id": "ext:test-integration:meter:e1ec0000-1111-4222-8333-444455556666",
+      "should_poll": false,
+      "params": ["GLOW_COMMODITY", "GLOW_HOME"],
+      "features": [
+        {
+          "external_id": "ext:test-integration:meter:e1ec0000-1111-4222-8333-444455556666:consumption",
+          "category": "energy-sensor",
+          "type": "thirty-minutes-consumption",
+          "unit": "kilowatt-hour",
+          "min": 0,
+          "max": 1000,
+          "read_only": true,
+          "has_feedback": false,
+          "supported_options": []
+        },
+        {
+          "external_id": "ext:test-integration:meter:e1ec0000-1111-4222-8333-444455556666:energy_today",
+          "category": "energy-sensor",
+          "type": "index-today",
+          "unit": "kilowatt-hour",
+          "min": 0,
+          "max": 100000,
+          "read_only": true,
+          "has_feedback": false,
+          "supported_options": []
+        },
+        {
+          "external_id": "ext:test-integration:meter:e1ec0000-1111-4222-8333-444455556666:energy_yesterday",
+          "category": "energy-sensor",
+          "type": "index-yesterday",
+          "unit": "kilowatt-hour",
+          "min": 0,
+          "max": 100000,
+          "read_only": true,
+          "has_feedback": false,
+          "supported_options": []
+        }
+      ]
+    },
+    "gas": {
+      "external_id": "ext:test-integration:meter:9a500000-1111-4222-8333-444455556666",
+      "should_poll": false,
+      "params": ["GLOW_COMMODITY", "GLOW_HOME"],
+      "features": [
+        {
+          "external_id": "ext:test-integration:meter:9a500000-1111-4222-8333-444455556666:energy_today",
+          "category": "energy-sensor",
+          "type": "index-today",
+          "unit": "kilowatt-hour",
+          "min": 0,
+          "max": 100000,
+          "read_only": true,
+          "has_feedback": false,
+          "supported_options": []
+        },
+        {
+          "external_id": "ext:test-integration:meter:9a500000-1111-4222-8333-444455556666:energy_yesterday",
+          "category": "energy-sensor",
+          "type": "index-yesterday",
+          "unit": "kilowatt-hour",
+          "min": 0,
+          "max": 100000,
+          "read_only": true,
+          "has_feedback": false,
+          "supported_options": []
+        },
+        {
+          "external_id": "ext:test-integration:meter:9a500000-1111-4222-8333-444455556666:cost_today",
+          "category": "currency",
+          "type": "decimal",
+          "unit": "pound-sterling",
+          "min": 0,
+          "max": 100000,
+          "read_only": true,
+          "has_feedback": false,
+          "supported_options": []
+        },
+        {
+          "external_id": "ext:test-integration:meter:9a500000-1111-4222-8333-444455556666:cost_yesterday",
+          "category": "currency",
+          "type": "decimal",
+          "unit": "pound-sterling",
+          "min": 0,
+          "max": 100000,
+          "read_only": true,
+          "has_feedback": false,
+          "supported_options": []
+        },
+        {
+          "external_id": "ext:test-integration:meter:9a500000-1111-4222-8333-444455556666:unit_rate",
+          "category": "currency",
+          "type": "decimal",
+          "unit": "pound-sterling",
+          "min": 0,
+          "max": 100,
+          "read_only": true,
+          "has_feedback": false,
+          "supported_options": []
+        },
+        {
+          "external_id": "ext:test-integration:meter:9a500000-1111-4222-8333-444455556666:standing_charge",
+          "category": "currency",
+          "type": "decimal",
+          "unit": "pound-sterling",
+          "min": 0,
+          "max": 100,
+          "read_only": true,
+          "has_feedback": false,
+          "supported_options": []
+        }
+      ]
+    }
+  },
+  "manifest": {
+    "config_schema": [
+      {
+        "key": "intro",
+        "type": "section"
+      },
+      {
+        "key": "username",
+        "type": "string"
+      },
+      {
+        "key": "password",
+        "type": "secret"
+      },
+      {
+        "key": "refresh_minutes",
+        "type": "select"
+      },
+      {
+        "key": "power_minutes",
+        "type": "select"
+      },
+      {
+        "key": "history_days",
+        "type": "select"
+      },
+      {
+        "key": "catchup",
+        "type": "boolean"
+      },
+      {
+        "key": "language",
+        "type": "select"
+      }
+    ],
+    "config_options": {
+      "refresh_minutes": ["30", "60"],
+      "power_minutes": ["1", "2", "5", "10"],
+      "history_days": ["0", "7", "31", "90"],
+      "language": ["auto", "en", "fr", "de", "es"]
+    },
+    "actions": ["test_connection"],
+    "widgets": [
+      {
+        "key": "meter",
+        "settings": ["device", "range"]
+      },
+      {
+        "key": "status",
+        "settings": []
+      }
+    ],
+    "widget_actions": ["refresh"],
+    "scene_triggers": [
+      {
+        "key": "daily_summary",
+        "fields": [
+          {
+            "key": "device",
+            "options": []
+          },
+          {
+            "key": "commodity",
+            "options": ["electricity", "gas"]
+          }
+        ],
+        "variables": [
+          {
+            "key": "device",
+            "type": "string"
+          },
+          {
+            "key": "device_name",
+            "type": "string"
+          },
+          {
+            "key": "commodity",
+            "type": "string"
+          },
+          {
+            "key": "date",
+            "type": "string"
+          },
+          {
+            "key": "energy_kwh",
+            "type": "number"
+          },
+          {
+            "key": "cost",
+            "type": "number"
+          },
+          {
+            "key": "complete",
+            "type": "boolean"
+          }
+        ]
+      },
+      {
+        "key": "tariff_changed",
+        "fields": [
+          {
+            "key": "device",
+            "options": []
+          },
+          {
+            "key": "commodity",
+            "options": ["electricity", "gas"]
+          }
+        ],
+        "variables": [
+          {
+            "key": "device",
+            "type": "string"
+          },
+          {
+            "key": "device_name",
+            "type": "string"
+          },
+          {
+            "key": "commodity",
+            "type": "string"
+          },
+          {
+            "key": "unit_rate",
+            "type": "number"
+          },
+          {
+            "key": "previous_unit_rate",
+            "type": "number"
+          },
+          {
+            "key": "standing_charge",
+            "type": "number"
+          },
+          {
+            "key": "previous_standing_charge",
+            "type": "number"
+          }
+        ]
+      },
+      {
+        "key": "data_delayed",
+        "fields": [
+          {
+            "key": "device",
+            "options": []
+          },
+          {
+            "key": "commodity",
+            "options": ["electricity", "gas"]
+          }
+        ],
+        "variables": [
+          {
+            "key": "device",
+            "type": "string"
+          },
+          {
+            "key": "device_name",
+            "type": "string"
+          },
+          {
+            "key": "commodity",
+            "type": "string"
+          },
+          {
+            "key": "hours",
+            "type": "number"
+          },
+          {
+            "key": "latest",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "data_resumed",
+        "fields": [
+          {
+            "key": "device",
+            "options": []
+          },
+          {
+            "key": "commodity",
+            "options": ["electricity", "gas"]
+          }
+        ],
+        "variables": [
+          {
+            "key": "device",
+            "type": "string"
+          },
+          {
+            "key": "device_name",
+            "type": "string"
+          },
+          {
+            "key": "commodity",
+            "type": "string"
+          },
+          {
+            "key": "hours",
+            "type": "number"
+          },
+          {
+            "key": "latest",
+            "type": "string"
+          }
+        ]
+      }
+    ],
+    "scene_actions": [
+      {
+        "key": "get_consumption",
+        "fields": [
+          {
+            "key": "device",
+            "options": []
+          },
+          {
+            "key": "period",
+            "options": [
+              "today",
+              "yesterday",
+              "this_week",
+              "last_7_days",
+              "this_month",
+              "last_month",
+              "last_30_days"
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "key": "energy_kwh",
+            "type": "number"
+          },
+          {
+            "key": "cost",
+            "type": "number"
+          },
+          {
+            "key": "days",
+            "type": "number"
+          },
+          {
+            "key": "complete",
+            "type": "boolean"
+          },
+          {
+            "key": "from",
+            "type": "string"
+          },
+          {
+            "key": "to",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "refresh",
+        "fields": [],
+        "outputs": [
+          {
+            "key": "electricity_today_kwh",
+            "type": "number"
+          },
+          {
+            "key": "electricity_today_cost",
+            "type": "number"
+          },
+          {
+            "key": "electricity_latest",
+            "type": "string"
+          },
+          {
+            "key": "gas_today_kwh",
+            "type": "number"
+          },
+          {
+            "key": "gas_today_cost",
+            "type": "number"
+          },
+          {
+            "key": "gas_latest",
+            "type": "string"
+          }
+        ]
+      }
+    ]
+  }
+}

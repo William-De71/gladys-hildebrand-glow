@@ -1,0 +1,1248 @@
+{
+  "manifest_version": 1,
+  "type": "device",
+  "name": "Hildebrand Glow (DCC)",
+  "description": {
+    "en": "UK smart meters through the Bright app: electricity and gas energy, cost, tariff, scenes.",
+    "fr": "Compteurs britanniques via l’app Bright : électricité, gaz, énergie, coût, tarif, scènes.",
+    "de": "Britische Smart Meter über die Bright-App: Strom, Gas, Energie, Kosten, Tarif, Szenen.",
+    "es": "Contadores británicos con la app Bright: luz, gas, energía, coste, tarifa, escenas."
+  },
+  "version": "0.1.0",
+  "docker_image": "ghcr.io/william-de71/gladys-hildebrand-glow:0.1.0",
+  "gladys_version": ">=5.3.0",
+  "categories": ["energy"],
+  "keywords": [
+    "hildebrand",
+    "glow",
+    "glowmarkt",
+    "bright",
+    "smart meter",
+    "smets2",
+    "dcc",
+    "in-home display",
+    "half-hourly",
+    "uk energy"
+  ],
+  "countries": ["GB"],
+  "cover_image": "https://raw.githubusercontent.com/William-De71/gladys-hildebrand-glow/main/cover.jpg",
+  "transports": ["cloud"],
+  "config_schema": [
+    {
+      "key": "intro",
+      "type": "section",
+      "label": {
+        "en": "Hildebrand Glow (DCC)",
+        "fr": "Hildebrand Glow (DCC)",
+        "de": "Hildebrand Glow (DCC)",
+        "es": "Hildebrand Glow (DCC)"
+      },
+      "description": {
+        "en": "How to connect:\n1. Install the free Bright app (Hildebrand), create an account and link your smart meters (SMETS2, or SMETS1 on the DCC). Wait until your consumption shows in the app.\n2. Enter below the e-mail and the password of the Bright account.\n3. In the Discover tab, add your meters.\nThe integration reads the Glowmarkt cloud of Hildebrand. The smart meter data reach it through the DCC, 30 minutes to a few hours late: the half-hours are shown at their real time once they arrive. The live power needs a Glow display (IHD or CAD).",
+        "fr": "Pour se connecter :\n1. Installez l’application gratuite Bright (Hildebrand), créez un compte et reliez vos compteurs communicants (SMETS2, ou SMETS1 passés au DCC). Attendez que votre consommation apparaisse dans l’application.\n2. Saisissez ci-dessous l’e-mail et le mot de passe du compte Bright.\n3. Dans l’onglet Découverte, ajoutez vos compteurs.\nL’intégration lit le cloud Glowmarkt de Hildebrand. Les données des compteurs y arrivent par le DCC, avec 30 minutes à quelques heures de retard : les demi-heures sont placées à leur heure réelle dès leur arrivée. La puissance instantanée exige un afficheur Glow (IHD ou CAD).",
+        "de": "So verbinden Sie sich:\n1. Installieren Sie die kostenlose Bright-App (Hildebrand), legen Sie ein Konto an und verknüpfen Sie Ihre Smart Meter (SMETS2 oder SMETS1 im DCC). Warten Sie, bis Ihr Verbrauch in der App erscheint.\n2. Geben Sie unten E-Mail und Passwort des Bright-Kontos ein.\n3. Fügen Sie im Reiter Entdecken Ihre Zähler hinzu.\nDie Integration liest die Glowmarkt-Cloud von Hildebrand. Die Zählerdaten kommen über das DCC mit 30 Minuten bis einigen Stunden Verzögerung an: Die Halbstunden werden bei ihrer Ankunft zu ihrer tatsächlichen Zeit eingetragen. Die Momentanleistung erfordert ein Glow-Display (IHD oder CAD).",
+        "es": "Cómo conectarse:\n1. Instale la app gratuita Bright (Hildebrand), cree una cuenta y vincule sus contadores inteligentes (SMETS2, o SMETS1 en el DCC). Espere a que su consumo aparezca en la app.\n2. Introduzca abajo el correo y la contraseña de la cuenta Bright.\n3. En la pestaña Descubrir, añada sus contadores.\nLa integración lee la nube Glowmarkt de Hildebrand. Los datos de los contadores llegan a ella por el DCC con 30 minutos a unas horas de retraso: las medias horas se colocan en su hora real cuando llegan. La potencia instantánea requiere una pantalla Glow (IHD o CAD)."
+      },
+      "links": [
+        {
+          "url": "https://glowmarkt.com/",
+          "label": {
+            "en": "Bright app and Glow displays (Hildebrand)",
+            "fr": "Application Bright et afficheurs Glow (Hildebrand)",
+            "de": "Bright-App und Glow-Displays (Hildebrand)",
+            "es": "App Bright y pantallas Glow (Hildebrand)"
+          }
+        },
+        {
+          "url": "https://github.com/William-De71/gladys-hildebrand-glow/blob/main/docs/fr.md",
+          "label": {
+            "en": "Documentation (French)",
+            "fr": "Documentation",
+            "de": "Dokumentation (Französisch)",
+            "es": "Documentación (francés)"
+          }
+        },
+        {
+          "url": "https://github.com/William-De71/gladys-hildebrand-glow/blob/main/docs/en.md",
+          "label": {
+            "en": "Documentation",
+            "fr": "Documentation (anglais)",
+            "de": "Dokumentation (Englisch)",
+            "es": "Documentación (inglés)"
+          }
+        }
+      ]
+    },
+    {
+      "key": "username",
+      "type": "string",
+      "required": true,
+      "label": {
+        "en": "E-mail of the Bright account",
+        "fr": "E-mail du compte Bright",
+        "de": "E-Mail des Bright-Kontos",
+        "es": "Correo de la cuenta Bright"
+      },
+      "description": {
+        "en": "The e-mail you sign in to the Bright app with.",
+        "fr": "L’e-mail avec lequel vous vous connectez à l’application Bright.",
+        "de": "Die E-Mail, mit der Sie sich in der Bright-App anmelden.",
+        "es": "El correo con el que inicia sesión en la app Bright."
+      },
+      "placeholder": {
+        "en": "you@example.co.uk",
+        "fr": "vous@example.co.uk",
+        "de": "sie@example.co.uk",
+        "es": "usted@example.co.uk"
+      }
+    },
+    {
+      "key": "password",
+      "type": "secret",
+      "required": true,
+      "label": {
+        "en": "Password",
+        "fr": "Mot de passe",
+        "de": "Passwort",
+        "es": "Contraseña"
+      },
+      "description": {
+        "en": "The password of the Bright account. Sent to Hildebrand only, never shown again.",
+        "fr": "Le mot de passe du compte Bright. Envoyé à Hildebrand uniquement, jamais réaffiché.",
+        "de": "Das Passwort des Bright-Kontos. Wird nur an Hildebrand gesendet und nie wieder angezeigt.",
+        "es": "La contraseña de la cuenta Bright. Solo se envía a Hildebrand y nunca se vuelve a mostrar."
+      },
+      "placeholder": {
+        "en": "Password",
+        "fr": "Mot de passe",
+        "de": "Passwort",
+        "es": "Contraseña"
+      }
+    },
+    {
+      "key": "refresh_minutes",
+      "type": "select",
+      "label": {
+        "en": "Reading of the half-hours",
+        "fr": "Relevé des demi-heures",
+        "de": "Abfrage der Halbstunden",
+        "es": "Lectura de las medias horas"
+      },
+      "options": [
+        {
+          "value": "30",
+          "label": {
+            "en": "Every 30 min",
+            "fr": "Toutes les 30 min",
+            "de": "Alle 30 Min.",
+            "es": "Cada 30 min"
+          }
+        },
+        {
+          "value": "60",
+          "label": {
+            "en": "Every 60 min",
+            "fr": "Toutes les 60 min",
+            "de": "Alle 60 Min.",
+            "es": "Cada 60 min"
+          }
+        }
+      ],
+      "default": "30",
+      "description": {
+        "en": "The meters send their consumption by half-hour: reading more often would bring nothing.",
+        "fr": "Les compteurs envoient leur consommation par demi-heure : relever plus souvent n’apporterait rien.",
+        "de": "Die Zähler senden ihren Verbrauch je Halbstunde: häufiger abzufragen brächte nichts.",
+        "es": "Los contadores envían su consumo por media hora: leer más a menudo no aportaría nada."
+      }
+    },
+    {
+      "key": "power_minutes",
+      "type": "select",
+      "label": {
+        "en": "Reading of the power",
+        "fr": "Relevé de la puissance",
+        "de": "Abfrage der Leistung",
+        "es": "Lectura de la potencia"
+      },
+      "options": [
+        {
+          "value": "1",
+          "label": {
+            "en": "Every 1 min",
+            "fr": "Toutes les 1 min",
+            "de": "Alle 1 Min.",
+            "es": "Cada 1 min"
+          }
+        },
+        {
+          "value": "2",
+          "label": {
+            "en": "Every 2 min",
+            "fr": "Toutes les 2 min",
+            "de": "Alle 2 Min.",
+            "es": "Cada 2 min"
+          }
+        },
+        {
+          "value": "5",
+          "label": {
+            "en": "Every 5 min",
+            "fr": "Toutes les 5 min",
+            "de": "Alle 5 Min.",
+            "es": "Cada 5 min"
+          }
+        },
+        {
+          "value": "10",
+          "label": {
+            "en": "Every 10 min",
+            "fr": "Toutes les 10 min",
+            "de": "Alle 10 Min.",
+            "es": "Cada 10 min"
+          }
+        }
+      ],
+      "default": "2",
+      "description": {
+        "en": "Only with a Glow display (IHD or CAD): without one, Hildebrand has no live power and nothing is asked.",
+        "fr": "Uniquement avec un afficheur Glow (IHD ou CAD) : sans lui, Hildebrand n’a pas de puissance instantanée et rien n’est demandé.",
+        "de": "Nur mit einem Glow-Display (IHD oder CAD): ohne es hat Hildebrand keine Momentanleistung, und es wird nichts abgefragt.",
+        "es": "Solo con una pantalla Glow (IHD o CAD): sin ella, Hildebrand no tiene potencia instantánea y no se pide nada."
+      }
+    },
+    {
+      "key": "history_days",
+      "type": "select",
+      "label": {
+        "en": "History given to Gladys",
+        "fr": "Historique transmis à Gladys",
+        "de": "An Gladys übergebener Verlauf",
+        "es": "Historial enviado a Gladys"
+      },
+      "options": [
+        {
+          "value": "0",
+          "label": {
+            "en": "None",
+            "fr": "Aucun",
+            "de": "Keiner",
+            "es": "Ninguno"
+          }
+        },
+        {
+          "value": "7",
+          "label": {
+            "en": "7 days",
+            "fr": "7 jours",
+            "de": "7 Tage",
+            "es": "7 días"
+          }
+        },
+        {
+          "value": "31",
+          "label": {
+            "en": "31 days",
+            "fr": "31 jours",
+            "de": "31 Tage",
+            "es": "31 días"
+          }
+        },
+        {
+          "value": "90",
+          "label": {
+            "en": "90 days",
+            "fr": "90 jours",
+            "de": "90 Tage",
+            "es": "90 días"
+          }
+        }
+      ],
+      "default": "31",
+      "description": {
+        "en": "Days of half-hours read once when a meter is added (energy screens, 30-day chart).",
+        "fr": "Jours de demi-heures relevés une fois quand un compteur est ajouté (écrans énergie, graphique 30 jours).",
+        "de": "Tage an Halbstunden, die einmal beim Hinzufügen eines Zählers gelesen werden (Energieansichten, 30-Tage-Diagramm).",
+        "es": "Días de medias horas leídos una vez al añadir un contador (pantallas de energía, gráfico de 30 días)."
+      }
+    },
+    {
+      "key": "catchup",
+      "type": "boolean",
+      "default": true,
+      "label": {
+        "en": "Ask for the latest data",
+        "fr": "Demander les dernières données",
+        "de": "Neueste Daten anfordern",
+        "es": "Pedir los últimos datos"
+      },
+      "description": {
+        "en": "At each half-hour, ask Hildebrand to fetch the latest readings from the DCC (as its documentation recommends). Turn off if your data already arrive on time.",
+        "fr": "À chaque demi-heure, demander à Hildebrand d’aller chercher les derniers relevés auprès du DCC (comme le recommande sa documentation). Désactivez si vos données arrivent déjà à l’heure.",
+        "de": "Zu jeder Halbstunde Hildebrand bitten, die neuesten Werte beim DCC abzuholen (wie dessen Dokumentation empfiehlt). Abschalten, wenn Ihre Daten bereits pünktlich ankommen.",
+        "es": "En cada media hora, pedir a Hildebrand que recoja las últimas lecturas del DCC (como recomienda su documentación). Desactívelo si sus datos ya llegan a tiempo."
+      }
+    },
+    {
+      "key": "language",
+      "type": "select",
+      "label": {
+        "en": "Language of the device texts",
+        "fr": "Langue des textes des appareils",
+        "de": "Sprache der Gerätetexte",
+        "es": "Idioma de los textos de los dispositivos"
+      },
+      "options": [
+        {
+          "value": "auto",
+          "label": {
+            "en": "Automatic",
+            "fr": "Automatique",
+            "de": "Automatisch",
+            "es": "Automático"
+          }
+        },
+        {
+          "value": "en",
+          "label": {
+            "en": "English",
+            "fr": "Anglais",
+            "de": "Englisch",
+            "es": "Inglés"
+          }
+        },
+        {
+          "value": "fr",
+          "label": {
+            "en": "French",
+            "fr": "Français",
+            "de": "Französisch",
+            "es": "Francés"
+          }
+        },
+        {
+          "value": "de",
+          "label": {
+            "en": "German",
+            "fr": "Allemand",
+            "de": "Deutsch",
+            "es": "Alemán"
+          }
+        },
+        {
+          "value": "es",
+          "label": {
+            "en": "Spanish",
+            "fr": "Espagnol",
+            "de": "Spanisch",
+            "es": "Español"
+          }
+        }
+      ],
+      "default": "auto",
+      "description": {
+        "en": "Names of the meters and features, messages of the button below. Automatic: the language of the dashboard once a widget is shown.",
+        "fr": "Noms des compteurs et des fonctionnalités, messages du bouton ci-dessous. Automatique : la langue du tableau de bord dès qu’un widget est affiché.",
+        "de": "Namen der Zähler und Funktionen, Meldungen der Schaltfläche unten. Automatisch: die Sprache des Dashboards, sobald ein Widget angezeigt wird.",
+        "es": "Nombres de los contadores y funciones, mensajes del botón de abajo. Automático: el idioma del panel en cuanto se muestra un widget."
+      }
+    }
+  ],
+  "actions": [
+    {
+      "key": "test_connection",
+      "timeout_seconds": 120,
+      "label": {
+        "en": "Test the connection",
+        "fr": "Tester la connexion",
+        "de": "Verbindung testen",
+        "es": "Probar la conexión"
+      },
+      "description": {
+        "en": "Signs in, reads the meters, their tariff and their half-hours now, and lists them.",
+        "fr": "Se connecte, relève maintenant les compteurs, leur tarif et leurs demi-heures, et les liste.",
+        "de": "Meldet sich an, liest jetzt die Zähler, ihren Tarif und ihre Halbstunden und listet sie auf.",
+        "es": "Inicia sesión, lee ahora los contadores, su tarifa y sus medias horas, y los lista."
+      }
+    }
+  ],
+  "widgets": [
+    {
+      "key": "meter",
+      "icon": "zap",
+      "label": {
+        "en": "Smart meter",
+        "fr": "Compteur communicant",
+        "de": "Smart Meter",
+        "es": "Contador inteligente"
+      },
+      "description": {
+        "en": "Energy and cost of today, yesterday or 7 / 30 days, power, chart by half-hour or day.",
+        "fr": "Énergie et coût du jour, d’hier ou de 7 / 30 jours, puissance, graphique par demi-heure ou par jour.",
+        "de": "Energie und Kosten von heute, gestern oder 7 / 30 Tagen, Leistung, Diagramm je Halbstunde oder Tag.",
+        "es": "Energía y coste de hoy, de ayer o de 7 / 30 días, potencia, gráfico por media hora o por día."
+      },
+      "settings": [
+        {
+          "key": "device",
+          "type": "select",
+          "source": "devices",
+          "label": {
+            "en": "Meter",
+            "fr": "Compteur",
+            "de": "Zähler",
+            "es": "Contador"
+          },
+          "description": {
+            "en": "Empty: the electricity meter.",
+            "fr": "Vide : le compteur d’électricité.",
+            "de": "Leer: der Stromzähler.",
+            "es": "Vacío: el contador de electricidad."
+          }
+        },
+        {
+          "key": "range",
+          "type": "select",
+          "label": {
+            "en": "Chart",
+            "fr": "Graphique",
+            "de": "Diagramm",
+            "es": "Gráfico"
+          },
+          "options": [
+            {
+              "value": "day",
+              "label": {
+                "en": "Last 24 hours by half-hour",
+                "fr": "24 dernières heures par demi-heure",
+                "de": "Letzte 24 Stunden je Halbstunde",
+                "es": "Últimas 24 horas por media hora"
+              }
+            },
+            {
+              "value": "week",
+              "label": {
+                "en": "Last 7 days",
+                "fr": "7 derniers jours",
+                "de": "Letzte 7 Tage",
+                "es": "Últimos 7 días"
+              }
+            },
+            {
+              "value": "month",
+              "label": {
+                "en": "Last 30 days",
+                "fr": "30 derniers jours",
+                "de": "Letzte 30 Tage",
+                "es": "Últimos 30 días"
+              }
+            }
+          ],
+          "default": "day"
+        }
+      ],
+      "action_timeout_seconds": 120
+    },
+    {
+      "key": "status",
+      "icon": "cloud",
+      "label": {
+        "en": "Hildebrand Glow",
+        "fr": "Hildebrand Glow",
+        "de": "Hildebrand Glow",
+        "es": "Hildebrand Glow"
+      },
+      "description": {
+        "en": "Connection to Glowmarkt, how recent the data of each meter are, tariffs.",
+        "fr": "Connexion à Glowmarkt, fraîcheur des données de chaque compteur, tarifs.",
+        "de": "Verbindung zu Glowmarkt, Aktualität der Daten jedes Zählers, Tarife.",
+        "es": "Conexión a Glowmarkt, actualidad de los datos de cada contador, tarifas."
+      },
+      "action_timeout_seconds": 120
+    }
+  ],
+  "scene_triggers": [
+    {
+      "key": "daily_summary",
+      "label": {
+        "en": "The figures of yesterday are ready",
+        "fr": "Les chiffres d’hier sont prêts",
+        "de": "Die Zahlen von gestern liegen vor",
+        "es": "Las cifras de ayer están listas"
+      },
+      "description": {
+        "en": "Once a day per meter: when every half-hour of yesterday has arrived, or at noon with those received.",
+        "fr": "Une fois par jour et par compteur : quand toutes les demi-heures d’hier sont arrivées, ou à midi avec celles reçues.",
+        "de": "Einmal täglich je Zähler: wenn alle Halbstunden von gestern da sind, oder mittags mit den empfangenen.",
+        "es": "Una vez al día por contador: cuando han llegado todas las medias horas de ayer, o a mediodía con las recibidas."
+      },
+      "fields": [
+        {
+          "key": "device",
+          "type": "select",
+          "source": "devices",
+          "label": {
+            "en": "Meter",
+            "fr": "Compteur",
+            "de": "Zähler",
+            "es": "Contador"
+          },
+          "description": {
+            "en": "Empty: every meter.",
+            "fr": "Vide : tous les compteurs.",
+            "de": "Leer: alle Zähler.",
+            "es": "Vacío: todos los contadores."
+          }
+        },
+        {
+          "key": "commodity",
+          "type": "select",
+          "label": {
+            "en": "Energy",
+            "fr": "Énergie",
+            "de": "Energie",
+            "es": "Energía"
+          },
+          "description": {
+            "en": "Empty: electricity and gas.",
+            "fr": "Vide : électricité et gaz.",
+            "de": "Leer: Strom und Gas.",
+            "es": "Vacío: electricidad y gas."
+          },
+          "options": [
+            {
+              "value": "electricity",
+              "label": {
+                "en": "Electricity",
+                "fr": "Électricité",
+                "de": "Strom",
+                "es": "Electricidad"
+              }
+            },
+            {
+              "value": "gas",
+              "label": {
+                "en": "Gas",
+                "fr": "Gaz",
+                "de": "Gas",
+                "es": "Gas"
+              }
+            }
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "key": "device",
+          "type": "string",
+          "label": {
+            "en": "Meter (external id)",
+            "fr": "Compteur (identifiant externe)",
+            "de": "Zähler (externe ID)",
+            "es": "Contador (id externo)"
+          }
+        },
+        {
+          "key": "device_name",
+          "type": "string",
+          "label": {
+            "en": "Meter name",
+            "fr": "Nom du compteur",
+            "de": "Zählername",
+            "es": "Nombre del contador"
+          }
+        },
+        {
+          "key": "commodity",
+          "type": "string",
+          "label": {
+            "en": "Energy (electricity or gas)",
+            "fr": "Énergie (electricity ou gas)",
+            "de": "Energie (electricity oder gas)",
+            "es": "Energía (electricity o gas)"
+          }
+        },
+        {
+          "key": "date",
+          "type": "string",
+          "label": {
+            "en": "Day (YYYY-MM-DD)",
+            "fr": "Jour (AAAA-MM-JJ)",
+            "de": "Tag (JJJJ-MM-TT)",
+            "es": "Día (AAAA-MM-DD)"
+          }
+        },
+        {
+          "key": "energy_kwh",
+          "type": "number",
+          "label": {
+            "en": "Energy (kWh)",
+            "fr": "Énergie (kWh)",
+            "de": "Energie (kWh)",
+            "es": "Energía (kWh)"
+          }
+        },
+        {
+          "key": "cost",
+          "type": "number",
+          "label": {
+            "en": "Cost (£)",
+            "fr": "Coût (£)",
+            "de": "Kosten (£)",
+            "es": "Coste (£)"
+          }
+        },
+        {
+          "key": "complete",
+          "type": "boolean",
+          "label": {
+            "en": "Every half-hour received",
+            "fr": "Toutes les demi-heures reçues",
+            "de": "Alle Halbstunden empfangen",
+            "es": "Todas las medias horas recibidas"
+          }
+        }
+      ]
+    },
+    {
+      "key": "tariff_changed",
+      "label": {
+        "en": "The tariff of a meter changes",
+        "fr": "Le tarif d’un compteur change",
+        "de": "Der Tarif eines Zählers ändert sich",
+        "es": "Cambia la tarifa de un contador"
+      },
+      "description": {
+        "en": "The unit rate or the standing charge known by Bright changed (checked every 6 hours).",
+        "fr": "Le prix du kWh ou l’abonnement connu de Bright a changé (vérifié toutes les 6 heures).",
+        "de": "Arbeitspreis oder Grundpreis bei Bright hat sich geändert (alle 6 Stunden geprüft).",
+        "es": "El precio del kWh o el cargo fijo conocido por Bright ha cambiado (comprobado cada 6 horas)."
+      },
+      "fields": [
+        {
+          "key": "device",
+          "type": "select",
+          "source": "devices",
+          "label": {
+            "en": "Meter",
+            "fr": "Compteur",
+            "de": "Zähler",
+            "es": "Contador"
+          },
+          "description": {
+            "en": "Empty: every meter.",
+            "fr": "Vide : tous les compteurs.",
+            "de": "Leer: alle Zähler.",
+            "es": "Vacío: todos los contadores."
+          }
+        },
+        {
+          "key": "commodity",
+          "type": "select",
+          "label": {
+            "en": "Energy",
+            "fr": "Énergie",
+            "de": "Energie",
+            "es": "Energía"
+          },
+          "description": {
+            "en": "Empty: electricity and gas.",
+            "fr": "Vide : électricité et gaz.",
+            "de": "Leer: Strom und Gas.",
+            "es": "Vacío: electricidad y gas."
+          },
+          "options": [
+            {
+              "value": "electricity",
+              "label": {
+                "en": "Electricity",
+                "fr": "Électricité",
+                "de": "Strom",
+                "es": "Electricidad"
+              }
+            },
+            {
+              "value": "gas",
+              "label": {
+                "en": "Gas",
+                "fr": "Gaz",
+                "de": "Gas",
+                "es": "Gas"
+              }
+            }
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "key": "device",
+          "type": "string",
+          "label": {
+            "en": "Meter (external id)",
+            "fr": "Compteur (identifiant externe)",
+            "de": "Zähler (externe ID)",
+            "es": "Contador (id externo)"
+          }
+        },
+        {
+          "key": "device_name",
+          "type": "string",
+          "label": {
+            "en": "Meter name",
+            "fr": "Nom du compteur",
+            "de": "Zählername",
+            "es": "Nombre del contador"
+          }
+        },
+        {
+          "key": "commodity",
+          "type": "string",
+          "label": {
+            "en": "Energy (electricity or gas)",
+            "fr": "Énergie (electricity ou gas)",
+            "de": "Energie (electricity oder gas)",
+            "es": "Energía (electricity o gas)"
+          }
+        },
+        {
+          "key": "unit_rate",
+          "type": "number",
+          "label": {
+            "en": "Unit rate (£/kWh)",
+            "fr": "Prix du kWh (£/kWh)",
+            "de": "Arbeitspreis (£/kWh)",
+            "es": "Precio del kWh (£/kWh)"
+          }
+        },
+        {
+          "key": "previous_unit_rate",
+          "type": "number",
+          "label": {
+            "en": "Previous unit rate (£/kWh)",
+            "fr": "Prix du kWh précédent (£/kWh)",
+            "de": "Vorheriger Arbeitspreis (£/kWh)",
+            "es": "Precio del kWh anterior (£/kWh)"
+          }
+        },
+        {
+          "key": "standing_charge",
+          "type": "number",
+          "label": {
+            "en": "Standing charge (£/day)",
+            "fr": "Abonnement (£/jour)",
+            "de": "Grundpreis (£/Tag)",
+            "es": "Cargo fijo (£/día)"
+          }
+        },
+        {
+          "key": "previous_standing_charge",
+          "type": "number",
+          "label": {
+            "en": "Previous standing charge (£/day)",
+            "fr": "Abonnement précédent (£/jour)",
+            "de": "Vorheriger Grundpreis (£/Tag)",
+            "es": "Cargo fijo anterior (£/día)"
+          }
+        }
+      ]
+    },
+    {
+      "key": "data_delayed",
+      "label": {
+        "en": "A meter stops sending data",
+        "fr": "Un compteur n’envoie plus de données",
+        "de": "Ein Zähler sendet keine Daten mehr",
+        "es": "Un contador deja de enviar datos"
+      },
+      "description": {
+        "en": "No new half-hour for 12 hours: the meter, its communications hub or the DCC is silent.",
+        "fr": "Aucune nouvelle demi-heure depuis 12 heures : le compteur, son hub de communication ou le DCC est muet.",
+        "de": "Seit 12 Stunden keine neue Halbstunde: Zähler, Kommunikations-Hub oder DCC schweigen.",
+        "es": "Ninguna media hora nueva desde hace 12 horas: el contador, su hub de comunicaciones o el DCC no responde."
+      },
+      "fields": [
+        {
+          "key": "device",
+          "type": "select",
+          "source": "devices",
+          "label": {
+            "en": "Meter",
+            "fr": "Compteur",
+            "de": "Zähler",
+            "es": "Contador"
+          },
+          "description": {
+            "en": "Empty: every meter.",
+            "fr": "Vide : tous les compteurs.",
+            "de": "Leer: alle Zähler.",
+            "es": "Vacío: todos los contadores."
+          }
+        },
+        {
+          "key": "commodity",
+          "type": "select",
+          "label": {
+            "en": "Energy",
+            "fr": "Énergie",
+            "de": "Energie",
+            "es": "Energía"
+          },
+          "description": {
+            "en": "Empty: electricity and gas.",
+            "fr": "Vide : électricité et gaz.",
+            "de": "Leer: Strom und Gas.",
+            "es": "Vacío: electricidad y gas."
+          },
+          "options": [
+            {
+              "value": "electricity",
+              "label": {
+                "en": "Electricity",
+                "fr": "Électricité",
+                "de": "Strom",
+                "es": "Electricidad"
+              }
+            },
+            {
+              "value": "gas",
+              "label": {
+                "en": "Gas",
+                "fr": "Gaz",
+                "de": "Gas",
+                "es": "Gas"
+              }
+            }
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "key": "device",
+          "type": "string",
+          "label": {
+            "en": "Meter (external id)",
+            "fr": "Compteur (identifiant externe)",
+            "de": "Zähler (externe ID)",
+            "es": "Contador (id externo)"
+          }
+        },
+        {
+          "key": "device_name",
+          "type": "string",
+          "label": {
+            "en": "Meter name",
+            "fr": "Nom du compteur",
+            "de": "Zählername",
+            "es": "Nombre del contador"
+          }
+        },
+        {
+          "key": "commodity",
+          "type": "string",
+          "label": {
+            "en": "Energy (electricity or gas)",
+            "fr": "Énergie (electricity ou gas)",
+            "de": "Energie (electricity oder gas)",
+            "es": "Energía (electricity o gas)"
+          }
+        },
+        {
+          "key": "hours",
+          "type": "number",
+          "label": {
+            "en": "Delay (hours)",
+            "fr": "Retard (heures)",
+            "de": "Verzögerung (Stunden)",
+            "es": "Retraso (horas)"
+          }
+        },
+        {
+          "key": "latest",
+          "type": "string",
+          "label": {
+            "en": "End of the last half-hour received (ISO date)",
+            "fr": "Fin de la dernière demi-heure reçue (date ISO)",
+            "de": "Ende der letzten empfangenen Halbstunde (ISO-Datum)",
+            "es": "Fin de la última media hora recibida (fecha ISO)"
+          }
+        }
+      ]
+    },
+    {
+      "key": "data_resumed",
+      "label": {
+        "en": "A meter sends data again",
+        "fr": "Un compteur envoie de nouveau des données",
+        "de": "Ein Zähler sendet wieder Daten",
+        "es": "Un contador vuelve a enviar datos"
+      },
+      "description": {
+        "en": "New half-hours arrive after a delay of 12 hours or more.",
+        "fr": "De nouvelles demi-heures arrivent après un retard de 12 heures ou plus.",
+        "de": "Nach einer Verzögerung von 12 Stunden oder mehr kommen wieder Halbstunden an.",
+        "es": "Llegan nuevas medias horas tras un retraso de 12 horas o más."
+      },
+      "fields": [
+        {
+          "key": "device",
+          "type": "select",
+          "source": "devices",
+          "label": {
+            "en": "Meter",
+            "fr": "Compteur",
+            "de": "Zähler",
+            "es": "Contador"
+          },
+          "description": {
+            "en": "Empty: every meter.",
+            "fr": "Vide : tous les compteurs.",
+            "de": "Leer: alle Zähler.",
+            "es": "Vacío: todos los contadores."
+          }
+        },
+        {
+          "key": "commodity",
+          "type": "select",
+          "label": {
+            "en": "Energy",
+            "fr": "Énergie",
+            "de": "Energie",
+            "es": "Energía"
+          },
+          "description": {
+            "en": "Empty: electricity and gas.",
+            "fr": "Vide : électricité et gaz.",
+            "de": "Leer: Strom und Gas.",
+            "es": "Vacío: electricidad y gas."
+          },
+          "options": [
+            {
+              "value": "electricity",
+              "label": {
+                "en": "Electricity",
+                "fr": "Électricité",
+                "de": "Strom",
+                "es": "Electricidad"
+              }
+            },
+            {
+              "value": "gas",
+              "label": {
+                "en": "Gas",
+                "fr": "Gaz",
+                "de": "Gas",
+                "es": "Gas"
+              }
+            }
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "key": "device",
+          "type": "string",
+          "label": {
+            "en": "Meter (external id)",
+            "fr": "Compteur (identifiant externe)",
+            "de": "Zähler (externe ID)",
+            "es": "Contador (id externo)"
+          }
+        },
+        {
+          "key": "device_name",
+          "type": "string",
+          "label": {
+            "en": "Meter name",
+            "fr": "Nom du compteur",
+            "de": "Zählername",
+            "es": "Nombre del contador"
+          }
+        },
+        {
+          "key": "commodity",
+          "type": "string",
+          "label": {
+            "en": "Energy (electricity or gas)",
+            "fr": "Énergie (electricity ou gas)",
+            "de": "Energie (electricity oder gas)",
+            "es": "Energía (electricity o gas)"
+          }
+        },
+        {
+          "key": "hours",
+          "type": "number",
+          "label": {
+            "en": "Delay (hours)",
+            "fr": "Retard (heures)",
+            "de": "Verzögerung (Stunden)",
+            "es": "Retraso (horas)"
+          }
+        },
+        {
+          "key": "latest",
+          "type": "string",
+          "label": {
+            "en": "End of the last half-hour received (ISO date)",
+            "fr": "Fin de la dernière demi-heure reçue (date ISO)",
+            "de": "Ende der letzten empfangenen Halbstunde (ISO-Datum)",
+            "es": "Fin de la última media hora recibida (fecha ISO)"
+          }
+        }
+      ]
+    }
+  ],
+  "scene_actions": [
+    {
+      "key": "get_consumption",
+      "timeout_seconds": 90,
+      "label": {
+        "en": "Get the energy and cost of a period",
+        "fr": "Obtenir l’énergie et le coût d’une période",
+        "de": "Energie und Kosten eines Zeitraums abrufen",
+        "es": "Obtener la energía y el coste de un periodo"
+      },
+      "description": {
+        "en": "From the half-hours of the meter, read when not already known. For a notification or a report.",
+        "fr": "D’après les demi-heures du compteur, relevées si elles ne sont pas déjà connues. Pour une notification ou un bilan.",
+        "de": "Aus den Halbstunden des Zählers, abgefragt, wenn sie noch nicht bekannt sind. Für eine Benachrichtigung oder einen Bericht.",
+        "es": "A partir de las medias horas del contador, leídas si aún no se conocen. Para una notificación o un informe."
+      },
+      "fields": [
+        {
+          "key": "device",
+          "type": "select",
+          "source": "devices",
+          "label": {
+            "en": "Meter",
+            "fr": "Compteur",
+            "de": "Zähler",
+            "es": "Contador"
+          },
+          "description": {
+            "en": "Empty: the electricity meter.",
+            "fr": "Vide : le compteur d’électricité.",
+            "de": "Leer: der Stromzähler.",
+            "es": "Vacío: el contador de electricidad."
+          }
+        },
+        {
+          "key": "period",
+          "type": "select",
+          "required": true,
+          "label": {
+            "en": "Period",
+            "fr": "Période",
+            "de": "Zeitraum",
+            "es": "Periodo"
+          },
+          "options": [
+            {
+              "value": "today",
+              "label": {
+                "en": "Today",
+                "fr": "Aujourd’hui",
+                "de": "Heute",
+                "es": "Hoy"
+              }
+            },
+            {
+              "value": "yesterday",
+              "label": {
+                "en": "Yesterday",
+                "fr": "Hier",
+                "de": "Gestern",
+                "es": "Ayer"
+              }
+            },
+            {
+              "value": "this_week",
+              "label": {
+                "en": "This week",
+                "fr": "Cette semaine",
+                "de": "Diese Woche",
+                "es": "Esta semana"
+              }
+            },
+            {
+              "value": "last_7_days",
+              "label": {
+                "en": "Last 7 days",
+                "fr": "7 derniers jours",
+                "de": "Letzte 7 Tage",
+                "es": "Últimos 7 días"
+              }
+            },
+            {
+              "value": "this_month",
+              "label": {
+                "en": "This month",
+                "fr": "Ce mois-ci",
+                "de": "Dieser Monat",
+                "es": "Este mes"
+              }
+            },
+            {
+              "value": "last_month",
+              "label": {
+                "en": "Last month",
+                "fr": "Le mois dernier",
+                "de": "Letzter Monat",
+                "es": "El mes pasado"
+              }
+            },
+            {
+              "value": "last_30_days",
+              "label": {
+                "en": "Last 30 days",
+                "fr": "30 derniers jours",
+                "de": "Letzte 30 Tage",
+                "es": "Últimos 30 días"
+              }
+            }
+          ],
+          "default": "yesterday"
+        }
+      ],
+      "outputs": [
+        {
+          "key": "energy_kwh",
+          "type": "number",
+          "label": {
+            "en": "Energy (kWh)",
+            "fr": "Énergie (kWh)",
+            "de": "Energie (kWh)",
+            "es": "Energía (kWh)"
+          }
+        },
+        {
+          "key": "cost",
+          "type": "number",
+          "label": {
+            "en": "Cost (£)",
+            "fr": "Coût (£)",
+            "de": "Kosten (£)",
+            "es": "Coste (£)"
+          }
+        },
+        {
+          "key": "days",
+          "type": "number",
+          "label": {
+            "en": "Days",
+            "fr": "Jours",
+            "de": "Tage",
+            "es": "Días"
+          }
+        },
+        {
+          "key": "complete",
+          "type": "boolean",
+          "label": {
+            "en": "Every half-hour received",
+            "fr": "Toutes les demi-heures reçues",
+            "de": "Alle Halbstunden empfangen",
+            "es": "Todas las medias horas recibidas"
+          }
+        },
+        {
+          "key": "from",
+          "type": "string",
+          "label": {
+            "en": "First day",
+            "fr": "Premier jour",
+            "de": "Erster Tag",
+            "es": "Primer día"
+          }
+        },
+        {
+          "key": "to",
+          "type": "string",
+          "label": {
+            "en": "Last day",
+            "fr": "Dernier jour",
+            "de": "Letzter Tag",
+            "es": "Último día"
+          }
+        }
+      ]
+    },
+    {
+      "key": "refresh",
+      "timeout_seconds": 120,
+      "label": {
+        "en": "Read the smart meters now",
+        "fr": "Relever les compteurs maintenant",
+        "de": "Smart Meter jetzt abfragen",
+        "es": "Leer los contadores ahora"
+      },
+      "description": {
+        "en": "Asks for the latest DCC data and reads the meters now (once per 5 minutes at most).",
+        "fr": "Demande les dernières données du DCC et relève les compteurs maintenant (une fois par 5 minutes au plus).",
+        "de": "Fordert die neuesten DCC-Daten an und fragt die Zähler jetzt ab (höchstens alle 5 Minuten).",
+        "es": "Pide los últimos datos del DCC y lee los contadores ahora (una vez cada 5 minutos como máximo)."
+      },
+      "outputs": [
+        {
+          "key": "electricity_today_kwh",
+          "type": "number",
+          "label": {
+            "en": "Electricity today (kWh)",
+            "fr": "Électricité aujourd’hui (kWh)",
+            "de": "Strom heute (kWh)",
+            "es": "Electricidad hoy (kWh)"
+          }
+        },
+        {
+          "key": "electricity_today_cost",
+          "type": "number",
+          "label": {
+            "en": "Electricity cost today (£)",
+            "fr": "Coût de l’électricité aujourd’hui (£)",
+            "de": "Stromkosten heute (£)",
+            "es": "Coste de la electricidad hoy (£)"
+          }
+        },
+        {
+          "key": "electricity_latest",
+          "type": "string",
+          "label": {
+            "en": "Electricity data up to (ISO date)",
+            "fr": "Données d’électricité jusqu’à (date ISO)",
+            "de": "Stromdaten bis (ISO-Datum)",
+            "es": "Datos de electricidad hasta (fecha ISO)"
+          }
+        },
+        {
+          "key": "gas_today_kwh",
+          "type": "number",
+          "label": {
+            "en": "Gas today (kWh)",
+            "fr": "Gaz aujourd’hui (kWh)",
+            "de": "Gas heute (kWh)",
+            "es": "Gas hoy (kWh)"
+          }
+        },
+        {
+          "key": "gas_today_cost",
+          "type": "number",
+          "label": {
+            "en": "Gas cost today (£)",
+            "fr": "Coût du gaz aujourd’hui (£)",
+            "de": "Gaskosten heute (£)",
+            "es": "Coste del gas hoy (£)"
+          }
+        },
+        {
+          "key": "gas_latest",
+          "type": "string",
+          "label": {
+            "en": "Gas data up to (ISO date)",
+            "fr": "Données de gaz jusqu’à (date ISO)",
+            "de": "Gasdaten bis (ISO-Datum)",
+            "es": "Datos de gas hasta (fecha ISO)"
+          }
+        }
+      ]
+    }
+  ]
+}

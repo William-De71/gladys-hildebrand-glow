@@ -1,0 +1,31 @@
+Gladys Hildebrand Glow (DCC) integration
+Copyright 2026 William Deren
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+It calls the Glowmarkt API of Hildebrand Technology Limited
+(https://api.glowmarkt.com/api/v0-1/), the cloud behind the Bright app, with
+the e-mail and the password of the user's Bright account and the public
+application id of the Bright app. Hildebrand, Glow, Glowmarkt and Bright are
+trademarks of Hildebrand Technology Limited; this integration is not
+affiliated with nor endorsed by Hildebrand.
+
+Protocol knowledge
+------------------
+The endpoints, the parameters and the shapes of the answers come from the
+official Swagger documents of the Glowmarkt API ("Resource System" and
+"Virtual Entity System", https://api.glowmarkt.com/api-docs/v0-1/resourcesys/
+and https://api.glowmarkt.com/api-docs/v0-1/vesys/, copyright Hildebrand
+Technology Limited), read on 2026-10-28.
+
+Facts were also read, without copying any code, in:
+  - pyglowmarkt by cybermaggedon (https://github.com/cybermaggedon/pyglowmarkt,
+    Apache License 2.0): the application id, the `currentRates` shape of the
+    tariff, `nulls=1`, the `catchup` call;
+  - the Home Assistant custom integration "Hildebrand Glow (DCC)" by Harley
+    Watson (https://github.com/HandyHat/ha-hildebrandglow-dcc, MIT License):
+    the classifiers, the costs in pence, the data about 30 minutes late;
+  - glowmarkt-rs by David Townsend (https://github.com/Mossop/glowmarkt-rs,
+    MIT License): the 10-day limit of a half-hourly reading, the `exp` of
+    the sign-in answer.
+This integration is an independent JavaScript implementation.
